@@ -418,7 +418,8 @@ public class Lab4_Richardson_Wilfredo {
         }
         while(guerreros.get(0).getSalud() >0 || guerreros.get(1).getSalud()>0){
             if (Pos==0) {
-                System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m");
+                System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m ");
+                System.out.print("");
                 jugadores = guerreros.get(Pos).Atacar(1, jugadores);
                 System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
                 jugadores = guerreros.get(Pos).Atacar(0, jugadores);
