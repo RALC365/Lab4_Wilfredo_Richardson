@@ -56,7 +56,7 @@ public abstract class Guerreros {
         return PoderAtaque;
     }
 
-    public void setPoderAtaque(int PoderAtaque)throws Errores {
+    public void setPoderAtaque(int PoderAtaque) {
         //if (PoderAtaque < 50) {
           //  throw new  Errores("No debe ser menor a 50");
         //}
@@ -67,7 +67,7 @@ public abstract class Guerreros {
         return Salud;
     }
 
-    public void setSalud(int Salud) throws Errores{
+    public void setSalud(int Salud) {
        // if (Salud < 100 || Salud > 200) {
           //  throw new  Errores("No debe ser menor a 100 ni mayor a 200");
        // }
@@ -78,7 +78,7 @@ public abstract class Guerreros {
         return Costo;
     }
 
-    public void setCosto(int Costo) throws Errores{
+    public void setCosto(int Costo) {
       //  if ( Salud > 300) {
         //    throw new  Errores("No debe ser mayor a 300");
         //}

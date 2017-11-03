@@ -49,7 +49,7 @@ public class Lab4_Richardson_Wilfredo {
             }
         }
         if (resp.equals("4.- Iniciar Partida")) {
-            
+            Partidas();
         }
         if (resp.equals("5.- Listar Jugadores")) {
             ListarJugadores();
@@ -74,8 +74,16 @@ public class Lab4_Richardson_Wilfredo {
         }
         int Puntos=0;
         jugadores.get(jugadores.size()-1).setPuntos(Puntos);
+        String s="________________________________________Guerreros________________________________________\n";
+                for (Object t : guerreros) {
+                    s+=""+guerreros.indexOf(t)+""+") \n"+t+"\n\n";    
+                }
+                System.out.println(s);
         try{
-        int PosicionGuerrero=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Poscion de Guerrero:"));
+        int PosicionGuerrero=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Posicion de Guerrero:"));
+        while(guerreros.get(guerreros.size()-1).getCosto() > jugadores.get(jugadores.size()-1).getDineroDisponible()){
+            PosicionGuerrero=Integer.parseInt(JOptionPane.showInputDialog("No tiene sufuciente dinerio para ese!\nIngrese la Posicion de Guerrero:"));
+        }
         Guerreros Guerrero=guerreros.get(PosicionGuerrero);
         jugadores.get(jugadores.size()-1).setGuerrero(Guerrero);
         }catch(IndexOutOfBoundsException e2){
@@ -254,6 +262,20 @@ public class Lab4_Richardson_Wilfredo {
         }
         JOptionPane.showMessageDialog(null, s);
     }
+    
+    public static void Partidas(){
+        ListarJugadores();
+        int Pos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el jugador a se Jugador1"));
+        while (Pos>=guerreros.size()) {
+        JOptionPane.showMessageDialog(null, "Esa Posición no existe!");
+        Pos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el jugador a se Jugador1"));
+        }
+        while(guerreros.get(0).getSalud() <=0 || guerreros.get(1).getSalud()<=0){
+            
+        }
+    }
+    
+    
     
     
     
