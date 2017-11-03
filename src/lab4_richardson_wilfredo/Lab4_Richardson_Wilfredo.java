@@ -459,13 +459,28 @@ public class Lab4_Richardson_Wilfredo {
         S+=""+Partidas.indexOf(t)+""+") \n"+t+"\n\n";    
         System.out.println(S);
         }
-        
+        jugadores=new ArrayList();
         int x=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ataque a retornar:"));
         Partidas.get(x);
+        jugadores=(ArrayList<Jugadores>) Partidas.get(x);
         System.out.println("_____________________Ataques Retornado______________");
         for (int i = x; i < Partidas.size(); i++) {
             System.out.println(Partidas.get(i));
         }
+        Partidas();
+        menu();
+        /*while(((Jugadores)Partidas.get(x)).Guerrero.getSalud() >0 ){
+            System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m ");
+                System.out.print("");
+                jugadores = guerreros.get(0).Atacar(1, jugadores);
+                System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
+                jugadores = guerreros.get(0).Atacar(0, jugadores);
+        }
+        if(guerreros.get(0).getSalud()<guerreros.get(1).getSalud()){
+            JOptionPane.showMessageDialog(null, "Jugador:"+jugadores.get(0).getNombre()+"GANA!");
+            int p=jugadores.get(0).getPuntos()+3;
+            jugadores.get(0).setPuntos(p);
+        }*/
     }
     
     
