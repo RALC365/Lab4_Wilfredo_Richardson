@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Lab4_Richardson_Wilfredo {
+    static ArrayList Partidas =new ArrayList(); 
     static ArrayList<Jugadores> jugadores=new ArrayList();
     static ArrayList<Guerreros> guerreros=new ArrayList();
     
     public static void main(String[] args) {
         menu();
     }
+    
     public static void menu(){
         String resp="";
         while(!resp.equals("Salir")){
@@ -41,21 +43,35 @@ public class Lab4_Richardson_Wilfredo {
                 }
         }
         if (resp.equals("3.- Registro Jugadores")) {
+            if(guerreros.size()==0){
+                    JOptionPane.showMessageDialog(null, "Debe Agregar Guerrero Primero!");
+                }else{
+                
             if(jugadores.size()>1){
                 JOptionPane.showMessageDialog(null, "Ya están los dos jugadores!");
                 break;
             }else{
                 RegistroJugadores();
             }
+            }
         }
         if (resp.equals("4.- Iniciar Partida")) {
+            if(guerreros.size()==0){
+                    JOptionPane.showMessageDialog(null, "Debe Agregar Jugadores Primero!");
+            }else
             Partidas();
         }
         if (resp.equals("5.- Listar Jugadores")) {
+            if(guerreros.size()==0){
+                    JOptionPane.showMessageDialog(null, "Debe Agregar Jugadores Primero!");
+            }else
             ListarJugadores();
         }
         if (resp.equals("6.- Cargar Partidas")) {
-            
+            if(guerreros.size()==0){
+                    JOptionPane.showMessageDialog(null, "Debe Agregar Jugadores Primero!");
+            }else
+                System.out.println("Hola");
         }
         }
     }
@@ -113,12 +129,6 @@ public class Lab4_Richardson_Wilfredo {
         if(tipo.equals(t[4])){
             Brujas();
         }
-        String s="________________________________________Guerrero"
-                + "s________________________________________\n";
-        for (Object z : guerreros) {
-        s+=""+guerreros.indexOf(z)+""+") \n"+z+"\n\n";    
-        }
-        System.out.println(s);
     }
     
     public static void Magos(){
@@ -406,19 +416,31 @@ public class Lab4_Richardson_Wilfredo {
         JOptionPane.showMessageDialog(null, "Esa Posición no existe!");
         Pos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el jugador a se Jugador1"));
         }
-        while(guerreros.get(0).getSalud() <=0 || guerreros.get(1).getSalud()<=0){
+        while(guerreros.get(0).getSalud() >0 || guerreros.get(1).getSalud()>0){
             if (Pos==0) {
                 System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m");
-                guerreros.get(Pos).Atacar(1, jugadores);
+                jugadores = guerreros.get(Pos).Atacar(1, jugadores);
                 System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
-                guerreros.get(Pos).Atacar(0, jugadores);
+                jugadores = guerreros.get(Pos).Atacar(0, jugadores);
             }else{
                 System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m");
-                guerreros.get(Pos).Atacar(0, jugadores);
+                jugadores = guerreros.get(Pos).Atacar(0, jugadores);
                 System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
-                guerreros.get(Pos).Atacar(1, jugadores);
+                jugadores = guerreros.get(Pos).Atacar(1, jugadores);
             }
-           
+        }
+        if(guerreros.get(0).getSalud()<guerreros.get(1).getSalud()){
+            JOptionPane.showMessageDialog(null, "Jugador:"+guerreros.get(1).getNombre()+"GANA!");
+        }else{
+            JOptionPane.showMessageDialog(null, "Jugador:"+guerreros.get(0).getNombre()+"GANA!");
+        }
+    }
+    
+    public static void Continuar(){
+        String s="________________________________________Ataques Guardados________________________________________\n";
+        for (Object t : Partidas) {
+        s+=""+Partidas.indexOf(t)+""+") \n"+t+"\n\n";    
+        System.out.println(s);
         }
     }
     

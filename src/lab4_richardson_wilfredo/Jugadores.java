@@ -56,17 +56,6 @@ public class Jugadores {
     public String toString() {
         return "Jugadores: " + "Nombre=" + Nombre + ", DineroDisponible=" + DineroDisponible + ", Puntos=" + Puntos + ", Guerrero=" + Guerrero;
     }
-    public static void EliminarGuerreros(){
-        ArrayList <Guerreros> Guerreros = new ArrayList();
-        for (int i = 0; i < Guerreros.size(); i++) {
-            System.out.println(i+".- " + Guerreros.get(i));
-        }
-        int PoscEliminar;
-        do {
-            PoscEliminar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición a eliminar"));
-        } while (PoscEliminar < 0 || PoscEliminar >= Guerreros.size());
-        Guerreros.remove(PoscEliminar);
-        
-    }
+
     
 }
