@@ -4,13 +4,16 @@ import javax.swing.JOptionPane;
 
 public class Lab4_Richardson_Wilfredo {
     public static void main(String[] args) {
-        System.out.println("Hola");
+        menu();
     }
-    public int menu(){
+    public static int menu(){
         String [] opciones = {
-            "1.-",
-            "2.-",
-            "3.-",
+            "1.- Creacion de Guerreros",
+            "2.- Eliminación de Guerreros",
+            "3.- Registro Jugadores",
+            "4.- Iniciar Partida",
+            "5.- Listar Jugadores",
+            "6.- Cargar Partidas",
             "Salir"
         };
         String resp = (String) JOptionPane.showInputDialog(null, 
