@@ -1,21 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4_richardson_wilfredo;
 
-/**
- *
- * @author RALC
- */
-public class Lab4_Richardson_Wilfredo {
+import javax.swing.JOptionPane;
 
-    /**
-     * @param args the command line arguments
-     */
+public class Lab4_Richardson_Wilfredo {
     public static void main(String[] args) {
         System.out.println("Hola");
+    }
+    public int menu(){
+        String [] opciones = {
+            "1.-",
+            "2.-",
+            "3.-",
+            "Salir"
+        };
+        String resp = (String) JOptionPane.showInputDialog(null, 
+                            "Seleccione el producto", "PRODUCTOS", 
+                            JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
+        int op = Integer.parseInt(resp.charAt(0)+"");
+        return op;
+        
     }
     
 }
