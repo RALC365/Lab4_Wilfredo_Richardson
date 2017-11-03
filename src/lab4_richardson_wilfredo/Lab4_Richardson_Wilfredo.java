@@ -113,30 +113,60 @@ public class Lab4_Richardson_Wilfredo {
         if(tipo.equals(t[4])){
             Brujas();
         }
+        String s="________________________________________Guerrero"
+                + "s________________________________________\n";
+        for (Object z : guerreros) {
+        s+=""+guerreros.indexOf(z)+""+") \n"+z+"\n\n";    
+        }
+        System.out.println(s);
     }
     
     public static void Magos(){
         guerreros.add(new Magos());
         String Nombre=JOptionPane.showInputDialog("Ingrese el Nombre:");
         ((Magos) guerreros.get(guerreros.size()-1)).setNombre(Nombre);
+        try{
         int Edad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Edad:"));
         ((Magos) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }catch(NumberFormatException e1){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int Edad=30;
+            ((Magos) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }
         String LugarNacimiento=JOptionPane.showInputDialog("Ingrese el Lugar de Nacimiento:");
         ((Magos) guerreros.get(guerreros.size()-1)).setLugarNacimiento(LugarNacimiento);
+        try{
         int PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Poder de Ataque:"));
         while(PoderAtaque>50 || PoderAtaque<0){
             PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Poder de Ataque:"));
         }
         ((Magos) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int PoderAtaque=30;
+            ((Magos) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }
+        try{
         int Salud=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Salud:"));
         while(Salud>200 || Salud<100){
             Salud=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese la Salud:"));
         }((Magos) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Salud=100;
+            ((Magos) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }
+        try{
         int Costo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Costo:"));
         while(Costo>300){
             Costo=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Costo:"));
         }
         ((Magos) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Costo=100;
+            ((Magos) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }
         String TipoMagia=JOptionPane.showInputDialog("Ingrese el Tipo de Magia:"); 
         ((Magos) guerreros.get(guerreros.size()-1)).setTipoMagia(TipoMagia);
         String ElementoFavorito=JOptionPane.showInputDialog("Ingrese el Elemento Favorito:");
@@ -147,24 +177,48 @@ public class Lab4_Richardson_Wilfredo {
         guerreros.add(new Elfos());
         String Nombre=JOptionPane.showInputDialog("Ingrese el Nombre:");
         ((Elfos) guerreros.get(guerreros.size()-1)).setNombre(Nombre);
+        try{
         int Edad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Edad:"));
         ((Elfos) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }catch(NumberFormatException e1){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int Edad=30;
+            ((Elfos) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }
         String LugarNacimiento=JOptionPane.showInputDialog("Ingrese el Lugar de Nacimiento:");
         ((Elfos) guerreros.get(guerreros.size()-1)).setLugarNacimiento(LugarNacimiento);
+        try{
         int PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Poder de Ataque:"));
         while(PoderAtaque>50 || PoderAtaque<0){
             PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Poder de Ataque:"));
         }
         ((Elfos) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int PoderAtaque=30;
+            ((Elfos) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }
+        try{
         int Salud=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Salud:"));
         while(Salud>200 || Salud<100){
             Salud=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese la Salud:"));
         }((Elfos) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Salud=100;
+            ((Elfos) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }
+        try{
         int Costo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Costo:"));
         while(Costo>300){
             Costo=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Costo:"));
         }
         ((Elfos) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Costo=100;
+            ((Elfos) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }
         String TipoArma=JOptionPane.showInputDialog("Ingrese el Tipo de Arma:"); 
         ((Elfos) guerreros.get(guerreros.size()-1)).setTipoArma(TipoArma);
         String RangoMilitar=JOptionPane.showInputDialog("Ingrese el Rango Militar:");
@@ -175,24 +229,48 @@ public class Lab4_Richardson_Wilfredo {
         guerreros.add(new Dragones());
         String Nombre=JOptionPane.showInputDialog("Ingrese el Nombre:");
         ((Dragones) guerreros.get(guerreros.size()-1)).setNombre(Nombre);
+        try{
         int Edad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Edad:"));
         ((Dragones) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }catch(NumberFormatException e1){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int Edad=30;
+            ((Dragones) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }
         String LugarNacimiento=JOptionPane.showInputDialog("Ingrese el Lugar de Nacimiento:");
         ((Dragones) guerreros.get(guerreros.size()-1)).setLugarNacimiento(LugarNacimiento);
+        try{
         int PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Poder de Ataque:"));
         while(PoderAtaque>50 || PoderAtaque<0){
             PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Poder de Ataque:"));
         }
         ((Dragones) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int PoderAtaque=30;
+            ((Dragones) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }
+        try{
         int Salud=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Salud:"));
         while(Salud>200 || Salud<100){
             Salud=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese la Salud:"));
         }((Dragones) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Salud=100;
+            ((Dragones) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }
+        try{
         int Costo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Costo:"));
         while(Costo>300){
             Costo=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Costo:"));
         }
         ((Dragones) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Costo=100;
+            ((Dragones) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }
         String Color=JOptionPane.showInputDialog("Ingrese el Color:");
         ((Dragones) guerreros.get(guerreros.size()-1)).setColor(Color);
         String Raza=JOptionPane.showInputDialog("Ingrese la Raza:");
@@ -203,24 +281,48 @@ public class Lab4_Richardson_Wilfredo {
         guerreros.add(new Arqueros());
         String Nombre=JOptionPane.showInputDialog("Ingrese el Nombre:");
         ((Arqueros) guerreros.get(guerreros.size()-1)).setNombre(Nombre);
+        try{
         int Edad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Edad:"));
         ((Arqueros) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }catch(NumberFormatException e1){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int Edad=30;
+            ((Arqueros) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }
         String LugarNacimiento=JOptionPane.showInputDialog("Ingrese el Lugar de Nacimiento:");
         ((Arqueros) guerreros.get(guerreros.size()-1)).setLugarNacimiento(LugarNacimiento);
+        try{
         int PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Poder de Ataque:"));
         while(PoderAtaque>50 || PoderAtaque<0){
             PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Poder de Ataque:"));
         }
         ((Arqueros) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int PoderAtaque=30;
+            ((Arqueros) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }
+        try{
         int Salud=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Salud:"));
         while(Salud>200 || Salud<100){
             Salud=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese la Salud:"));
         }((Arqueros) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Salud=100;
+            ((Arqueros) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }
+        try{
         int Costo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Costo:"));
         while(Costo>300){
             Costo=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Costo:"));
         }
         ((Arqueros) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Costo=100;
+            ((Arqueros) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }
         String MaterialArco=JOptionPane.showInputDialog("Ingrese el Material del Arco:"); 
         ((Arqueros) guerreros.get(guerreros.size()-1)).setMaterialArco(MaterialArco);
         String MaterialArmadura=JOptionPane.showInputDialog("Ingrese el Material de Armadura:"); 
@@ -231,26 +333,56 @@ public class Lab4_Richardson_Wilfredo {
         guerreros.add(new Brujas());
         String Nombre=JOptionPane.showInputDialog("Ingrese el Nombre:");
         ((Brujas) guerreros.get(guerreros.size()-1)).setNombre(Nombre);
+        try{
         int Edad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Edad:"));
         ((Brujas) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }catch(NumberFormatException e1){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int Edad=30;
+            ((Brujas) guerreros.get(guerreros.size()-1)).setEdad(Edad);
+        }
         String LugarNacimiento=JOptionPane.showInputDialog("Ingrese el Lugar de Nacimiento:");
         ((Brujas) guerreros.get(guerreros.size()-1)).setLugarNacimiento(LugarNacimiento);
+        try{
         int PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Poder de Ataque:"));
         while(PoderAtaque>50 || PoderAtaque<0){
             PoderAtaque=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Poder de Ataque:"));
         }
         ((Brujas) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 30 por defecto");
+            int PoderAtaque=30;
+            ((Brujas) guerreros.get(guerreros.size()-1)).setPoderAtaque(PoderAtaque);
+        }
+        try{
         int Salud=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la Salud:"));
         while(Salud>200 || Salud<100){
             Salud=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese la Salud:"));
         }((Brujas) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Salud=100;
+            ((Brujas) guerreros.get(guerreros.size()-1)).setSalud(Salud);
+        }
+        try{
         int Costo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Costo:"));
         while(Costo>300){
             Costo=Integer.parseInt(JOptionPane.showInputDialog("Dato Incorrecto!\nIngrese el Costo:"));
         }
         ((Brujas) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 100 por defecto");
+            int Costo=100;
+            ((Brujas) guerreros.get(guerreros.size()-1)).setCosto(Costo);
+        }
+        try{
         int SigloNacimiento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Siglo de Nacimiento:")); 
         ((Brujas) guerreros.get(guerreros.size()-1)).setSigloNacimiento(SigloNacimiento);
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(null, "Dato Incorrecto! Se pondrá 19 por defecto");
+            int SigloNacimiento=19;
+            ((Brujas) guerreros.get(guerreros.size()-1)).setSigloNacimiento(SigloNacimiento);
+        }
         String LugarResidencia=JOptionPane.showInputDialog("Ingrese el Luagr de Residencia:");
         ((Brujas) guerreros.get(guerreros.size()-1)).setLugarResidencia(LugarResidencia);
     }
@@ -264,14 +396,29 @@ public class Lab4_Richardson_Wilfredo {
     }
     
     public static void Partidas(){
-        ListarJugadores();
-        int Pos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el jugador a se Jugador1"));
+        String s="________________________________________Jugadores________________________________________\n";
+        for (Object t : jugadores) {
+        s+=""+jugadores.indexOf(t)+""+") \n"+t+"\n\n";    
+        }
+        System.out.println(s);
+        int Pos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el jugador a se Jugador 1"));
         while (Pos>=guerreros.size()) {
         JOptionPane.showMessageDialog(null, "Esa Posición no existe!");
         Pos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el jugador a se Jugador1"));
         }
         while(guerreros.get(0).getSalud() <=0 || guerreros.get(1).getSalud()<=0){
-            
+            if (Pos==0) {
+                System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m");
+                guerreros.get(Pos).Atacar(1, jugadores);
+                System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
+                guerreros.get(Pos).Atacar(0, jugadores);
+            }else{
+                System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m");
+                guerreros.get(Pos).Atacar(0, jugadores);
+                System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
+                guerreros.get(Pos).Atacar(1, jugadores);
+            }
+           
         }
     }
     
