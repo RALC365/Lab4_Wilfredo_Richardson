@@ -17,9 +17,14 @@ public abstract class Guerreros {
         this.Nombre = Nombre;
         this.Edad = Edad;
         this.LugarNacimiento = LugarNacimiento;
-        this.PoderAtaque = PoderAtaque;
-        this.Salud = Salud;
-        this.Costo = Costo;
+        //this.PoderAtaque = PoderAtaque;
+        try{
+            this.setPoderAtaque(PoderAtaque);
+        }catch(Errores e){
+            //this.setPoderAtaque(PoderAtaque);
+        }
+        //this.Salud = Salud;
+        //this.Costo = Costo;
     }
 
     public String getNombre() {
@@ -50,7 +55,10 @@ public abstract class Guerreros {
         return PoderAtaque;
     }
 
-    public void setPoderAtaque(int PoderAtaque) {
+    public void setPoderAtaque(int PoderAtaque)throws Errores {
+        if (PoderAtaque < 50) {
+            throw new  Errores("No debe ser menor a 50");
+        }
         this.PoderAtaque = PoderAtaque;
     }
 
@@ -58,7 +66,10 @@ public abstract class Guerreros {
         return Salud;
     }
 
-    public void setSalud(int Salud) {
+    public void setSalud(int Salud) throws Errores{
+        if (Salud < 100 || Salud > 200) {
+            throw new  Errores("No debe ser menor a 100 ni mayor a 200");
+        }
         this.Salud = Salud;
     }
 
@@ -66,7 +77,10 @@ public abstract class Guerreros {
         return Costo;
     }
 
-    public void setCosto(int Costo) {
+    public void setCosto(int Costo) throws Errores{
+        if ( Salud > 300) {
+            throw new  Errores("No debe ser mayor a 300");
+        }
         this.Costo = Costo;
     }
 

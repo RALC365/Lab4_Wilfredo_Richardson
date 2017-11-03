@@ -26,7 +26,7 @@ public class Errores extends Exception{
 
     @Override
     public String toString() {
-        return "Errores\n Se cometió un grave error, no tenes que hacer eso\n Jamás";
+        return "JAMÄS\n";
     }
 
     
