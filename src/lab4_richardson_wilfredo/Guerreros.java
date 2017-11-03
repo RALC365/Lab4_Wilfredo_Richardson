@@ -11,20 +11,21 @@ public abstract class Guerreros {
     private int Costo;//<=300
 
     public Guerreros() {
+        //Arlem
     }
 
     public Guerreros(String Nombre, int Edad, String LugarNacimiento, int PoderAtaque, int Salud, int Costo) {
         this.Nombre = Nombre;
         this.Edad = Edad;
         this.LugarNacimiento = LugarNacimiento;
-        //this.PoderAtaque = PoderAtaque;
-        try{
-            this.setPoderAtaque(PoderAtaque);
-        }catch(Errores e){
-            //this.setPoderAtaque(PoderAtaque);
-        }
-        //this.Salud = Salud;
-        //this.Costo = Costo;
+        this.PoderAtaque = PoderAtaque;
+        //try{
+           // this.setPoderAtaque(PoderAtaque);
+        //}catch(Errores e){
+           // this.setPoderAtaque(50);
+       // }
+        this.Salud = Salud;
+        this.Costo = Costo;
     }
 
     public String getNombre() {
@@ -56,9 +57,9 @@ public abstract class Guerreros {
     }
 
     public void setPoderAtaque(int PoderAtaque)throws Errores {
-        if (PoderAtaque < 50) {
-            throw new  Errores("No debe ser menor a 50");
-        }
+        //if (PoderAtaque < 50) {
+          //  throw new  Errores("No debe ser menor a 50");
+        //}
         this.PoderAtaque = PoderAtaque;
     }
 
@@ -67,9 +68,9 @@ public abstract class Guerreros {
     }
 
     public void setSalud(int Salud) throws Errores{
-        if (Salud < 100 || Salud > 200) {
-            throw new  Errores("No debe ser menor a 100 ni mayor a 200");
-        }
+       // if (Salud < 100 || Salud > 200) {
+          //  throw new  Errores("No debe ser menor a 100 ni mayor a 200");
+       // }
         this.Salud = Salud;
     }
 
@@ -78,15 +79,16 @@ public abstract class Guerreros {
     }
 
     public void setCosto(int Costo) throws Errores{
-        if ( Salud > 300) {
-            throw new  Errores("No debe ser mayor a 300");
-        }
+      //  if ( Salud > 300) {
+        //    throw new  Errores("No debe ser mayor a 300");
+        //}
         this.Costo = Costo;
     }
 
     @Override
     public String toString() {
-        return "Nombre = " + Nombre ;
+        return "Nombre: " + Nombre +"\nPoder de Ataque: " + PoderAtaque
+                +"\nSalud: " + Salud;
     }
     public abstract void Atacar(int jud, ArrayList<Jugadores> Jugadores);
     
