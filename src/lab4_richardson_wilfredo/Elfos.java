@@ -53,7 +53,7 @@ public class Elfos extends Guerreros{
     }
 
     @Override
-    public void Atacar(int jud, ArrayList<Jugadores> Jugadores) {
+    public ArrayList<Jugadores> Atacar(int jud, ArrayList<Jugadores> Jugadores) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         double salud = Jugadores.get(jud).getGuerrero().getSalud();
         int jud2;
@@ -74,6 +74,7 @@ public class Elfos extends Guerreros{
         }
         //Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
         //System.out.println("\u001b[31m La salud del contrario: "+ salud +"\u001b[0m" );
+        return Jugadores;
     }
     
     

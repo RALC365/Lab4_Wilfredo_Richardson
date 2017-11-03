@@ -53,7 +53,7 @@ public class Dragones extends Guerreros{
     }
 
     @Override
-    public void Atacar(int jud, ArrayList<Jugadores> Jugadores) {
+    public ArrayList<Jugadores> Atacar(int jud, ArrayList<Jugadores> Jugadores) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         double salud = Jugadores.get(jud).getGuerrero().getSalud();
         int ataq2 = Jugadores.get(jud).getGuerrero().getPoderAtaque();
@@ -78,6 +78,7 @@ public class Dragones extends Guerreros{
         //Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
         //System.out.println("\u001b[31m La salud del contrario: "+ salud +"\u001b[0m" );
         System.out.println("\u001b[31m El poder de  ataque del contrincante es: "+ ataq2 +"\u001b[0m" );
+        return Jugadores;
     }
     
     

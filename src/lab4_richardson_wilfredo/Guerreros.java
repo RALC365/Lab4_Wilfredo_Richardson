@@ -90,7 +90,7 @@ public abstract class Guerreros {
         return "Nombre: " + Nombre +"\nPoder de Ataque: " + PoderAtaque
                 +"\nSalud: " + Salud;
     }
-    public abstract void Atacar(int jud, ArrayList<Jugadores> Jugadores);
+    public abstract ArrayList<Jugadores> Atacar(int jud, ArrayList<Jugadores> Jugadores);
     
     
     

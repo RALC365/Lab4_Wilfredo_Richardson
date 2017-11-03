@@ -53,7 +53,7 @@ public class Brujas extends Guerreros{
     }
 
     @Override
-    public void Atacar(int jud, ArrayList<Jugadores> Jugadores) {
+    public ArrayList<Jugadores> Atacar(int jud, ArrayList<Jugadores> Jugadores) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         double salud = Jugadores.get(jud).getGuerrero().getSalud();
         int jud2;
@@ -78,9 +78,8 @@ public class Brujas extends Guerreros{
         //ataq2 = ataq2 + 50;
         Jugadores.get(jud).getGuerrero().setPoderAtaque(((int)ataq1)+50);
         System.out.println("\u001b[31m El poder de ataque del contrario: "+ ataq1 + 50 +"\u001b[0m" );
+        return Jugadores;
     }
-    
-    
     
     
 }
