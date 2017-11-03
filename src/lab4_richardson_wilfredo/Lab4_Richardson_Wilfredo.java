@@ -34,7 +34,7 @@ public class Lab4_Richardson_Wilfredo {
             "Salir"
         };
         String resp = (String) JOptionPane.showInputDialog(null, 
-                            "Seleccione el producto", "PRODUCTOS", 
+                            "Seleccione una opción", "MENÚ PRINCIPAL", 
                             JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
         int op = Integer.parseInt(resp.charAt(0)+"");
         return op;
