@@ -5,6 +5,8 @@
  */
 package lab4_richardson_wilfredo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author RALC
@@ -48,6 +50,24 @@ public class Arqueros extends Guerreros{
     @Override
     public String toString() {
         return "Arqueros" + "MaterialArco=" + MaterialArco + ", MaterialArmadura=" + MaterialArmadura + '}';
+    }
+
+    @Override
+    public void Atacar(int jud, ArrayList<Jugadores> Jugadores) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools
+        double salud = Jugadores.get(jud).getGuerrero().getSalud();
+        int jud2;
+        if (jud ==0) {
+            jud2 = 1;
+        }else{
+            jud2 = 0;
+        }
+        double ataq1 = Jugadores.get(jud2).getGuerrero().getPoderAtaque();
+        salud = salud - ataq1;
+        Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
+        int salud2 = Jugadores.get(jud2).getGuerrero().getSalud();
+        salud2 += 10;
+        Jugadores.get(jud).getGuerrero().setSalud(salud2);
     }
 
     

@@ -5,6 +5,8 @@
  */
 package lab4_richardson_wilfredo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author RALC
@@ -48,6 +50,24 @@ public class Dragones extends Guerreros{
     @Override
     public String toString() {
         return "Dragones{" + "Color=" + Color + ", Raza=" + Raza + '}';
+    }
+
+    @Override
+    public void Atacar(int jud, ArrayList<Jugadores> Jugadores) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double salud = Jugadores.get(jud).getGuerrero().getSalud();
+        int ataq2 = Jugadores.get(jud).getGuerrero().getPoderAtaque();
+        ataq2 = ataq2 - (int)(ataq2 *0.25);
+        Jugadores.get(jud).getGuerrero().setPoderAtaque(ataq2);
+        int jud2;
+        if (jud ==0) {
+            jud2 = 1;
+        }else{
+            jud2 = 0;
+        }
+        double ataq1 = Jugadores.get(jud2).getGuerrero().getPoderAtaque();
+        salud = salud - ataq1;
+        Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
     }
     
     

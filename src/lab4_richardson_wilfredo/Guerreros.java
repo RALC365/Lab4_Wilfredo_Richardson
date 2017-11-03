@@ -1,11 +1,14 @@
 package lab4_richardson_wilfredo;
-public class Guerreros {
+
+import java.util.ArrayList;
+
+public abstract class Guerreros {
     private String Nombre;
     private int Edad;
     private String LugarNacimiento;
-    private int PoderAtaque;
-    private int Salud;
-    private int Costo;//arioas
+    private int PoderAtaque;//<=50
+    private int Salud;//100>=x>=200
+    private int Costo;//<=300
 
     public Guerreros() {
     }
@@ -69,8 +72,10 @@ public class Guerreros {
 
     @Override
     public String toString() {
-        return "Guerreros{" + "Nombre=" + Nombre + ", Edad=" + Edad + ", LugarNacimiento=" + LugarNacimiento + ", PoderAtaque=" + PoderAtaque + ", Salud=" + Salud + ", Costo=" + Costo + '}';
+        return "Nombre = " + Nombre ;
     }
+    public abstract void Atacar(int jud, ArrayList<Jugadores> Jugadores);
+    
     
     
     
