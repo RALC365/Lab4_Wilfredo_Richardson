@@ -58,18 +58,20 @@ public class Brujas extends Guerreros{
         double salud = Jugadores.get(jud).getGuerrero().getSalud();
         int jud2;
         if (jud ==0) {
-            jud2 = 0;
-            jud = 1;
-        }else{
             jud2 = 1;
-            jud =0;
+            //jud = 1;
+        }else{
+            jud2 = 0;
+            //jud =0;
         }
         double ataq1 = Jugadores.get(jud).getGuerrero().getPoderAtaque();
         salud = salud - ataq1;
         Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
-        int ataq2 = Jugadores.get(jud2).getGuerrero().getPoderAtaque();
-        ataq2 = ataq2 + 50;
-        Jugadores.get(jud2).getGuerrero().setPoderAtaque(ataq2);
+        System.out.println("\u001b[31m La salud del contrario: "+ salud +"\u001b[0m" );
+        //int ataq2 = Jugadores.get(jud2).getGuerrero().getPoderAtaque();
+        //ataq2 = ataq2 + 50;
+        Jugadores.get(jud).getGuerrero().setPoderAtaque(((int)ataq1)+50);
+        System.out.println("\u001b[31m El poder de ataque del contrario: "+ ataq1 + 50 +"\u001b[0m" );
     }
     
     

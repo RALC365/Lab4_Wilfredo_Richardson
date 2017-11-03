@@ -65,6 +65,7 @@ public class Elfos extends Guerreros{
         double ataq1 = Jugadores.get(jud2).getGuerrero().getPoderAtaque();
         salud = salud - ataq1;
         Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
+        System.out.println("\u001b[31m La salud del contrario: "+ salud +"\u001b[0m" );
     }
     
     

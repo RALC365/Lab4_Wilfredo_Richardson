@@ -66,6 +66,7 @@ public class Magos extends Guerreros{
         double ataq2 = (Jugadores.get(jud).getGuerrero().getPoderAtaque())/2;
         salud = salud - ataq1 - ataq2;
         Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
+        System.out.println("\u001b[31m La salud del contrario: "+ salud +"\u001b[0m" );
     }
     
     
