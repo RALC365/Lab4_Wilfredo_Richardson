@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 
 public class Lab4_Richardson_Wilfredo {
     static ArrayList Partidas =new ArrayList(); 
+    static ArrayList PartidasG =new ArrayList();
     static ArrayList<Jugadores> jugadores=new ArrayList();
     static ArrayList<Guerreros> guerreros=new ArrayList();
     
@@ -56,7 +57,7 @@ public class Lab4_Richardson_Wilfredo {
             }
         }
         if (resp.equals("4.- Iniciar Partida")) {
-            if(guerreros.size()==0){
+            if(jugadores.size()==0){
                     JOptionPane.showMessageDialog(null, "Debe Agregar Jugadores Primero!");
             }else
             Partidas();
@@ -68,10 +69,10 @@ public class Lab4_Richardson_Wilfredo {
             ListarJugadores();
         }
         if (resp.equals("6.- Cargar Partidas")) {
-            if(guerreros.size()==0){
-                    JOptionPane.showMessageDialog(null, "Debe Agregar Jugadores Primero!");
+            if(guerreros.size()==0 || Partidas.size()==0){
+                    JOptionPane.showMessageDialog(null, "Debe Agregar Jugadores y jugar una Partida Primero!");
             }else
-                System.out.println("Hola");
+            Continuar();    
         }
         }
     }
@@ -101,6 +102,7 @@ public class Lab4_Richardson_Wilfredo {
             PosicionGuerrero=Integer.parseInt(JOptionPane.showInputDialog("No tiene sufuciente dinerio para ese!\nIngrese la Posicion de Guerrero:"));
         }
         Guerreros Guerrero=guerreros.get(PosicionGuerrero);
+        guerreros.remove(PosicionGuerrero);
         jugadores.get(jugadores.size()-1).setGuerrero(Guerrero);
         }catch(IndexOutOfBoundsException e2){
             JOptionPane.showMessageDialog(null, "Dato Incorrecto! La posición será 0 por defecto");
@@ -421,15 +423,20 @@ public class Lab4_Richardson_Wilfredo {
                 System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m ");
                 System.out.print("");
                 jugadores = guerreros.get(Pos).Atacar(1, jugadores);
+                Partidas.add(jugadores);
                 System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
                 jugadores = guerreros.get(Pos).Atacar(0, jugadores);
+                Partidas.add(jugadores);
             }else{
                 System.out.println("\u001B[31mTurno Jugador 1 \u001B[0m");
                 jugadores = guerreros.get(Pos).Atacar(0, jugadores);
+                Partidas.add(jugadores);
                 System.out.println("\u001B[32mTurno Jugador 2 \u001B[0m");
                 jugadores = guerreros.get(Pos).Atacar(1, jugadores);
+                Partidas.add(jugadores);
             }
         }
+        PartidasG.add(Partidas);
         if(guerreros.get(0).getSalud()<guerreros.get(1).getSalud()){
             JOptionPane.showMessageDialog(null, "Jugador:"+guerreros.get(1).getNombre()+"GANA!");
         }else{
@@ -439,9 +446,21 @@ public class Lab4_Richardson_Wilfredo {
     
     public static void Continuar(){
         String s="________________________________________Ataques Guardados________________________________________\n";
-        for (Object t : Partidas) {
-        s+=""+Partidas.indexOf(t)+""+") \n"+t+"\n\n";    
+        for (Object t : PartidasG) {
+        s+=""+PartidasG.indexOf(t)+""+") \n"+t+"\n\n";    
         System.out.println(s);
+        }
+        int pos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la partida guardada:"));
+        String S="________________________________________Ataques Guardados________________________________________\n";
+        for (Object t : Partidas) {
+        S+=""+Partidas.indexOf(t)+""+") \n"+t+"\n\n";    
+        System.out.println(S);
+        }
+        
+        int x=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ataque a retornar:"));
+        Partidas.get(x);
+        for (int i = x; i < Partidas.size(); i++) {
+            System.out.println(Partidas.get(i));
         }
     }
     
