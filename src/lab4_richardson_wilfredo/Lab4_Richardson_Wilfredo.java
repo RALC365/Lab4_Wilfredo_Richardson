@@ -46,4 +46,33 @@ public class Lab4_Richardson_Wilfredo {
         int Puntos=0;
         int PosicionGuerrero=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición a eliminar:"));
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //comentario
 }
