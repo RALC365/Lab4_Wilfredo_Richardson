@@ -66,8 +66,16 @@ public class Arqueros extends Guerreros{
         
         double ataq1 = Jugadores.get(jud2).getGuerrero().getPoderAtaque();
         salud = salud - ataq1;
-        Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
-        System.out.println("\u001b[31m La salud del contrario: "+ salud +"\u001b[0m" );
+        if (salud <= 0) {
+            Jugadores.get(jud).getGuerrero().setSalud(0);
+            System.out.println("\u001b[31m La salud del contrario: "+ 0 +"\u001b[0m" );
+            
+        }else{
+            Jugadores.get(jud).getGuerrero().setSalud(((int)salud));
+            System.out.println("\u001b[31m La salud del contrario: "+ salud +"\u001b[0m" );
+        }
+        
+        
         
         
         int salud2 = Jugadores.get(jud2).getGuerrero().getSalud();
