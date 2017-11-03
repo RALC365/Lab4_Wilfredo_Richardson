@@ -5,7 +5,7 @@ public class Guerreros {
     private String LugarNacimiento;
     private int PoderAtaque;
     private int Salud;
-    private int Costo;
+    private int Costo;//arioas
 
     public Guerreros() {
     }
